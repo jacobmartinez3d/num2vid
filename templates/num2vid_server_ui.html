@@ -1,0 +1,17 @@
+<html>
+<head>
+	<title>Num2Vid Server v{{data.ver}}</title>
+</head>
+<body>
+    <form action="" method="post" novalidate>
+        <p>
+            {{ data.form.math_str.label }}<br>
+            {{ data.form.math_str() }}
+        </p>
+        <p>{{ data.form.submit() }}</p>
+    </form>
+    {% if "calculated_result" in data %}
+     = {{ data.calculated_result }}
+    {% endif %}
+</body>
+</html>
