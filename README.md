@@ -12,37 +12,37 @@ It is reccomended to run Num2Vid using a Python Virtual Environment to keep depe
 
 To get started clone or download/extract the `num2vid` repository and then open a cmd prompt or terminal and navigate to the repository root:
 
-```
+```bash
 cd /path/to/num2vid/
 ```
 
 We need `virtualenv` to continue so if needed install it with:
 
-```
+```bash
 pip3 install virtualenv
 ```
 
 Then, create a venv directory (at the `num2vid` repo root):
 
-```
+```bash
 virtualenv venv
 ```
 
 To activate the `virtualenv` on Linux:
 
-```
+```bash
 source venv/bin/activate
 ```
 
 To activate the `virtualenv` on Windows:
 
-```
+```cmd
 venv\Scripts\activate
 ```
 
 Then, install dependencies:
 
-```
+```bash
 pip3 install -r requirements.txt
 ```
 
@@ -55,13 +55,13 @@ First, activate the virtual environment the same way as above.
 
 Linux:
 
-```
+```bash
 source venv/bin/activate
 ```
 
 Windows:
 
-```
+```cmd
 venv\Scripts\activate
 ```
 
@@ -69,19 +69,19 @@ Then launch the server:
 
 Linux:
 
-```
+```bash
 venv/bin/python launcher.py --server  # using the included python executeable
 ```
 
 Windows:
 
-```
+```cmd
 venv\Scripts\python launcher.py --server  # using the included python executable
 ```
 
 or if you already have a python3 alias set up on your system:
 
-```
+```bash
 python3 launcher.py --server
 ```
 
@@ -91,19 +91,19 @@ To launch the client open another terminal and navigate back to the repository d
 
 on Windows:
 
-```
+```cmd
 venv\Scripts\python launcher.py --client  # using the included python executable
 ```
 
 on Linux:
 
-```
+```bash
 venv/bin/python launcher.py --client  # using the included python executable
 ```
 
 or if you already have python3 alias set up on your system:
 
-```
+```bash
 python3 launcher.py --client
 ```
 
@@ -135,14 +135,14 @@ The `launcher.py` script can also be used to start an interactive python shell b
 
 Example using terminal:
 
-```
+```bash
 source venv/bin/activate
 python3 launcher.py --python
 ```
 
 A python shell will start, with the `num2vid` module ready to be imported.:
 
-```
+```python
 >>> from num2vid import Num2VidClient
 >>> from os import environ
 ```
@@ -151,7 +151,7 @@ Notice we also imported the `environ` method from the `os` module, this is to ac
 
 To instantiate a new `Num2VidClient` instance, you just need to pass in the location of `num2vid/config/num2vid_config.json` or use our environmnet variable:
 
-```
+```python
 >>> c = Num2VidClient(environ["NUM2VID_CONFIG"])
 >>> help(c)
 ```
@@ -160,14 +160,14 @@ Now, let's submit a num to the server. The `submit_num` method can either return
 
 To send a num and retrieve a `requests.Response` object:
 
-```
+```python
 res = c.submit_num(500)  # notice when using the API directly there is no limit on number.
 help(res)
 ```
 
 To send a num and download the vid directly, just include the `download_path` parameter for the filename:
 
-```
+```python
 res = c.submit_num(500, "/home/username/Desktop/500.mp4")
 ```
 
