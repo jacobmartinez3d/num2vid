@@ -10,6 +10,6 @@ MarkupSafe==1.1.1
 PySide2==5.14.2.1
 requests==2.23.0
 shiboken2==5.14.2.1
-urllib3==1.25.9
+urllib3==1.26.5
 Werkzeug==1.0.1
 WTForms==2.3.1
